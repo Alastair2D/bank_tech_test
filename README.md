@@ -1,4 +1,4 @@
- # bank_tech_test_ruby
+ # Bank_Tech_Test_Ruby
 
 ## Specification
 

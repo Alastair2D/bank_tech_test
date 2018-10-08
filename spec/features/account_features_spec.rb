@@ -1,4 +1,4 @@
-require './lib/account'
+require 'account'
 
 describe 'Account Features' do 
 
@@ -13,7 +13,6 @@ describe 'Account Features' do
   end
 
 
-
   def create_new_account 
     @ac1 = Account.new 
   end
@@ -22,5 +21,9 @@ describe 'Account Features' do
     expect(@ac1.balance).to eq 0 
   end
 
+  def deposit
+    @ac1.deposit(1000)
+    expect(@ac1.balance).to eq 1000
+  end
     
 end
