@@ -1,3 +1,5 @@
+# require 'date'
+
 class Account 
 
   attr_reader :balance
@@ -8,7 +10,7 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    'You have deposited £' + (amount.to_s)
+    'You deposited £' + (amount.to_s)
   end
 
 
