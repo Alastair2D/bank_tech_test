@@ -2,7 +2,7 @@ require 'account'
 
 describe Account do 
   subject(:account) { described_class.new}
-  let(:mockBalance) { double :balance}
+  let(:mockDeposit) { double :deposit}
 
   describe '#initialize' do 
     it 'Defaults with a balance of £0' do
@@ -17,7 +17,6 @@ describe Account do
       expect(ac1.balance).to eq 1000
     end
   end
-
 
 
 

@@ -8,6 +8,7 @@ class Account
 
   def deposit(amount)
     @balance += amount
+    'You have deposited £' + (amount.to_s)
   end
 
 
