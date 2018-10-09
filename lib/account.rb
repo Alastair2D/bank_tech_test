@@ -17,7 +17,19 @@ class Account
     'You deposited £' + (amount.to_s)
   end
 
-  
+  def withdraw(date = Time.now, amount)
+    raise 'Insufficient funds' if insufficient_funds?(amount)
+    @balance -= amount
+    # transaction = @transaction_klass.new(date_amount)
+    # @transactions.push(transaction)
+    # 'You withdrew £' + amount.to_s
+  end
+
+end
 
 
+private 
+
+def insufficient_funds?(amount)
+  amount > @balance
 end
