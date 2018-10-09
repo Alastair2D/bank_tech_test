@@ -1,7 +1,7 @@
 require 'transaction'
 
 describe Transaction do 
-  subject(:transaction) { described_class.new}
+  subject(:transaction) { Transaction.new}
 
   describe '#initialize' do 
     it 'Takes date and amount args' do
@@ -10,5 +10,5 @@ describe Transaction do
   end
 
 
-
+  
 end

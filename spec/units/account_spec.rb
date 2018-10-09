@@ -2,8 +2,8 @@ require 'account'
 require 'transaction'
 
 describe Account do 
-  subject(:account) { described_class.new }
-  let(:mockDeposit) { double :deposit }
+  subject(:account) { Account.new }
+  let(:statement_printer)  { double :statement_printer }
   let(:mockTransaction) { double :transaction }
 
   describe '#initialize' do 
@@ -34,8 +34,23 @@ describe Account do
       subject.withdraw(200)
       expect(subject.balance).to eq 800
     end
+    it 'Adds transaction to the @transactions array' do 
+      expect { subject.withdraw(100) }.to change { subject.transactions.length }.by 1
+    end
+
+    context 'Requested withdrawl exceeds funds' do 
+      it 'raises error: Insufficient funds' do 
+        expect { subject.withdraw(2000) }.to raise_error 'Insufficient funds'  
+      end
+    end
+  end
+
+  describe '#statement' do 
+    it 'calls #print on StatementPrinter' do 
+      expect(statement_printer).to receive(:print).with(subject.transactions)
+      subject.statement
+    end
   end
 
 
-  
 end
