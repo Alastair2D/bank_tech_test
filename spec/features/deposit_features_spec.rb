@@ -1,6 +1,6 @@
 require 'account'
 
-describe 'Account Features' do 
+describe 'Deposit Features' do 
   let(:account) { Account.new }
 
   describe '#Deposit' do 
@@ -9,7 +9,6 @@ describe 'Account Features' do
       expect(account.balance).to eq 1000
     end
   end
-
 
 
 end

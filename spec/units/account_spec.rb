@@ -2,8 +2,8 @@ require 'account'
 require 'transaction'
 
 describe Account do 
-  subject(:account) { described_class.new}
-  let(:mockDeposit) { double :deposit}
+  subject(:account) { described_class.new }
+  let(:mockDeposit) { double :deposit }
   let(:mockTransaction) { double :transaction }
 
   describe '#initialize' do 
@@ -23,14 +23,19 @@ describe Account do
     it 'Displays a message to user after successful deposit' do 
       expect(subject.deposit('10-01-2012', 1000)).to eq 'You deposited £1000'
     end
-    # it 'Creates a new instance of Transaction' do 
-    #   subject.deposit('10-01-2012', 1000)
-    #   expect(@transaction_klass).to receive(:new).with('10-01-2012', 1000).and_return(:transaction)
-    # end
     it 'Adds transaction to the @transactions array' do 
       expect { subject.deposit('10-01-2012', 1000) }.to change { subject.transactions.length }.by 1
     end
   end
-  
 
+  describe '#withdraw' do 
+    before { subject.deposit(1000) }
+    it 'Allows users to withdraw funds' do 
+      subject.withdraw(200)
+      expect(subject.balance).to eq 800
+    end
+  end
+
+
+  
 end
