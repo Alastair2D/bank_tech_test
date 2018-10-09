@@ -1,5 +1,7 @@
  # Bank_Tech_Test_Ruby
 
+ [![Build Status](https://travis-ci.com/Alastair2D/bank-tech-test-ruby.svg?branch=master)](https://travis-ci.org/Alastair2D/bank_tech_test_ruby)
+
 ## Specification
 
 ### Requirements
@@ -23,3 +25,7 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
+
+
+### User Stories
+### Domain Model

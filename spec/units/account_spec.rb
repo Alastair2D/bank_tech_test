@@ -16,10 +16,11 @@ describe Account do
       expect(subject.balance).to eq 1000
     end
     it 'Displays message to customer after successful deposit' do
-      allow(subject).to receive(:deposit).and_return('You have deposited £ ' + mockDeposit.to_s)
+      expect(subject.deposit(1000)).to_return ('You have deposited £ ' + mockDeposit.to_s)      
     end
+    it 'Allows users to add funds with a given date' do 
+      
   end
-
   
 
 
