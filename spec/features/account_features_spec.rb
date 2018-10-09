@@ -1,29 +1,15 @@
 require 'account'
 
 describe 'Account Features' do 
+  let(:account) { Account.new }
 
-  it 'Knows current balance' do 
-    create_new_account
-    account_balance
+  describe '#Deposit' do 
+    it 'Adds funds to their balance' do 
+      account.deposit('10-01-12', 1000)
+      expect(account.balance).to eq 1000
+    end
   end
 
-  it 'Allows deposits' do 
-    create_new_account
-    deposit
-  end
 
 
-  def create_new_account 
-    @ac1 = Account.new 
-  end
-
-  def account_balance 
-    expect(@ac1.balance).to eq 0 
-  end
-
-  def deposit
-    @ac1.deposit(1000)
-    expect(@ac1.balance).to eq 1000
-  end
-    
 end

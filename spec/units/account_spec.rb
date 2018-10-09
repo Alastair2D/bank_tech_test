@@ -12,16 +12,13 @@ describe Account do
 
   describe '#deposit' do 
     it 'Allows users to add funds' do 
-      subject.deposit(1000)
+      subject.deposit('10-01-12', 1000)
       expect(subject.balance).to eq 1000
     end
-    it 'Displays message to customer after successful deposit' do
-      expect(subject.deposit(1000)).to_return ('You have deposited £ ' + mockDeposit.to_s)      
-    end
     it 'Allows users to add funds with a given date' do 
-      
+      expect(subject.deposit('10-01-12', 1000)).to eq 'You deposited £1000'
+    end
   end
   
-
 
 end

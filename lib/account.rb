@@ -8,7 +8,7 @@ class Account
     @balance = balance
   end
 
-  def deposit(amount)
+  def deposit(date, amount)
     @balance += amount
     'You deposited £' + (amount.to_s)
   end
