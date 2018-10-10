@@ -13,15 +13,14 @@ class Account
   end
 
   def deposit(amount)
+    @balance += amount 
     transaction_helper(amount)
   end
 
-  def withdraw(date = Time.now, amount)
+  def withdraw(amount)
     raise 'Insufficient funds' if insufficient_funds?(amount)
-    @balance -= amount
-    transaction = @transaction_klass.new(amount: amount)
-    @transactions.push(transaction)
-    'You withdrew £' + amount.to_s    
+    @balance -= amount 
+    transaction_helper(amount)
   end
 
   def statement
@@ -38,7 +37,6 @@ def insufficient_funds?(amount)
 end
 
 def transaction_helper(amount)
-  @balance += amount 
   @transactions.push(@transaction_klass.new(amount: amount, balance: @balance))
   return 'Current balance: £#{balance}'
 end
