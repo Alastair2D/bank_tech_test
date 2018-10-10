@@ -1,7 +1,7 @@
 class StatementPrinter
 
   def self.print(transactions)
-    "date || credit || debit || balance\\n#{format(transactions)}\n"
+    "date || credit || debit || balance \n#{format(transactions)}\n"
   end
 
   def self.format(transactions)
