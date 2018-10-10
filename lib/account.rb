@@ -2,7 +2,6 @@ require_relative './transaction'
 require_relative './statement_printer'
 
 class Account 
-
   attr_reader :balance, :transactions
 
   def initialize(transaction_klass = Transaction, printer = StatementPrinter)
@@ -12,15 +11,17 @@ class Account
     @transactions = []
   end
 
-  def deposit(type = credit, amount)
-    raise 'Invalid request' if invalid_request?(amount)
+  def deposit(amount)
+    raise 'Invalid deposit request' if invalid_deposit?(amount)
+    amount_helper(amount)
     @balance += amount 
     transaction_helper(amount)
   end
 
   def withdraw(amount)
-    raise 'Invalid request' if invalid_request?(amount)
+    raise 'Invalid withdrawl request' if invalid_withdrawl?(amount)
     raise 'Insufficient funds' if insufficient_funds?(amount)
+    
     @balance -= amount 
     transaction_helper(amount)
   end
@@ -30,7 +31,6 @@ class Account
   end
 
 end
-
 
 private 
 
@@ -43,8 +43,17 @@ def transaction_helper(amount)
   return "Current balance: £#{@balance}"
 end
 
-def invalid_request?(amount)
-  amount < 0 
+def invalid_deposit?(amount)
+  amount < 0
+  amount
 end
 
+def invalid_withdrawl?(amount)
+  amount > 0
+end
 
+def amount_helper(amount)
+  float_amount = amount.to_f
+  printf("%.2f", float_amount)
+end
+    
