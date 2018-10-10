@@ -18,6 +18,7 @@ class StatementPrinter
     date.strftime("%d/%m/%Y")
   end
    
+  
 
 end
 

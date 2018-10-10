@@ -10,8 +10,6 @@ describe StatementPrinter do
     before { @transactions = [depositTransaction, withdrawlTransaction] }
     
     it 'displays transaction history' do 
-      # ac1 = Account.new
-      # ac1.statement  
       expect(subject.print(@transactions)).to eq(
         "date || credit || debit || balance\n"\
         "2000.1.1 || 5000  ||  || 5000\n"\
