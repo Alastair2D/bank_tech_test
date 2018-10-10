@@ -16,7 +16,7 @@ describe Account do
   end
 
   describe '#deposit' do 
-    it 'Allows users to add funds with a given date' do 
+    it 'Allows users to add funds' do 
       subject.deposit(1000)
       expect(subject.balance).to eq 1000
     end

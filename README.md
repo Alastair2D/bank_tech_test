@@ -13,7 +13,7 @@ To install, run and use this application follow these steps:
 2. Run: `bundle install`
 3. To use the app, open a Ruby REPL: e.g. `irb` from the command line
 4. `require './lib/client` to load the Account class and, in doing so, all dependent classes
-5. Execute Tests & View Coverage: `rspec --fd`
+5. Tested with RSpec.  To execute Tests: `rspec --fd`
 6. Create a new bank account: `ac1 = Account.new`
 7. Make a deposit of e.g. £100: `ac1.deposit(100)`
 8. Make a withdrawl of e.g. £20: `ac1.withdraw(20)`
@@ -51,7 +51,7 @@ I want to able to make a deposit
 ```
 
 ```
-US2. As a customer, 
+As a customer, 
 so I can access my money, 
 I want to be able to make a withdrawl
 ```
@@ -78,3 +78,13 @@ Nice-to-Have Features: Store interactions in memory
 ### Domain Model
 
 ![Domain Model](https://github.com/Alastair2D/bank_tech_test_ruby/blob/master/images/dm4.jpg)
+
+## Edge Cases 
+* This program defends against withdrawls exceeding funds available (at this stage, balance
+
+### Areas for improvement
+* In order of how I plan to develop this project, I would like to turn it into a full-stack web app:
+    1. Add a Controller to make user interaction from a REPL slicker
+    2. Refactor to MVC with a user interface 
+    3. Add a basic database schema
+    4. Deploy on Heroku
