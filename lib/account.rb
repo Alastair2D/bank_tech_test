@@ -13,14 +13,13 @@ class Account
 
   def deposit(amount)
     amount_helper(amount)
-    @balance += amount 
     transaction_helper(amount)
   end
 
   def withdraw(amount)
     raise 'Insufficient funds' if insufficient_funds?(amount)
-    @balance -= amount 
-    transaction_helper(amount)
+    amount_helper(amount)
+    transaction_helper(-amount)
   end
 
   def statement
@@ -36,6 +35,7 @@ def insufficient_funds?(amount)
 end
 
 def transaction_helper(amount)
+  @balance += amount
   @transactions.push(@transaction_klass.new(amount: amount, balance: @balance))
   return "Current balance: £#{@balance}"
 end
