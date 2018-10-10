@@ -12,19 +12,16 @@ class Account
     @transactions = []
   end
 
-  def deposit(date = Time.now, amount)
-    @balance += amount
-    transaction = @transaction_klass.new(date, amount)
-    @transactions.push(transaction)
-    'You deposited £' + (amount.to_s)    # return "Current balance: #{@balance}"
+  def deposit(amount)
+    transaction_helper(amount)
   end
 
   def withdraw(date = Time.now, amount)
     raise 'Insufficient funds' if insufficient_funds?(amount)
     @balance -= amount
-    transaction = @transaction_klass.new(date, -amount)
+    transaction = @transaction_klass.new(amount: amount)
     @transactions.push(transaction)
-    'You withdrew £' + amount.to_s       # return "Current balance: #{@balance}"
+    'You withdrew £' + amount.to_s    
   end
 
   def statement
@@ -39,3 +36,10 @@ private
 def insufficient_funds?(amount)
   amount > @balance
 end
+
+def transaction_helper(amount)
+  @balance += amount 
+  @transactions.push(@transaction_klass.new(amount: amount, balance: @balance))
+  return 'Current balance: £#{balance}'
+end
+

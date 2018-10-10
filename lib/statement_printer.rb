@@ -4,6 +4,8 @@ class StatementPrinter
       # 'date || credit || debit || balance\n #{(transactions)} \n'
       'test'
     end
+
+    
    
 
 

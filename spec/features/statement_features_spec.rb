@@ -10,7 +10,7 @@ describe 'Statement Features' do
 
       it 'Displays transactions' do
         ac1 = Account.new
-        ac1.deposit('10/01/2012', 1000)
+        ac1.deposit(1000)
         expect { ac1.statement }.to output('test')  
         # expect { ac1.statement }.to output('10/01/2012', 1000)  
       end

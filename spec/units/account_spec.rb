@@ -10,21 +10,21 @@ describe Account do
     it 'Defaults with a balance of £0' do
       expect(subject.balance).to eq 0
     end
-    it 'Defaults with an empty @transactionirbs array' do 
+    it 'Defaults with an empty @transactions array' do 
       expect(subject.transactions).to eq []
     end
   end
 
   describe '#deposit' do 
     it 'Allows users to add funds with a given date' do 
-      subject.deposit('10-01-2012', 1000)
+      subject.deposit(1000)
       expect(subject.balance).to eq 1000
     end
     it 'Displays a message to user after successful deposit' do 
-      expect(subject.deposit('10-01-2012', 1000)).to eq 'You deposited £1000'
+      expect(subject.deposit(1000)).to eq 'Current balance: £#{balance}'
     end
     it 'Adds transaction to the @transactions array' do 
-      expect { subject.deposit('10-01-2012', 1000) }.to change { subject.transactions.length }.by 1
+      expect { subject.deposit(1000) }.to change { subject.transactions.length }.by 1
     end
   end
 
