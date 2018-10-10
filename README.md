@@ -77,6 +77,4 @@ Nice-to-Have Features: Store interactions in memory
 
 ### Domain Model
 
-![Domain Model](https://github.com/Alastair2D/bank_tech_test_ruby/blob/master/images/Bank%20Tech%20Test%20-%20Domain%20Model.png)
-
 ![Domain Model](https://github.com/Alastair2D/bank_tech_test_ruby/blob/master/images/dm4.jpg)
