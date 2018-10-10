@@ -76,6 +76,7 @@ Nice-to-Have Features: Store interactions in memory
 [Trello Board - Bank_Tech_Test_Ruby](https://trello.com/b/u1DJkPsD/bank-tech-test)
 
 ### Domain Model
-[Domain Diagram - User Stories, Classes & Methods](https://www.draw.io/#G19-wYGSpyvmUiElYmEWRShAYgVDx7jjIy)
 
 ![Domain Model](https://github.com/Alastair2D/bank_tech_test_ruby/blob/master/images/Bank%20Tech%20Test%20-%20Domain%20Model.png)
+
+![Domain Model](https://github.com/Alastair2D/bank_tech_test_ruby/blob/master/images/dm4.jpg)
