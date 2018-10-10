@@ -2,9 +2,26 @@
 
  [![Build Status](https://travis-ci.com/Alastair2D/bank-tech-test-ruby.svg?branch=master)](https://travis-ci.org/Alastair2D/bank_tech_test_ruby)
 
-## Specification
+## Overview
+Week 10 at Makers revolves around the type of tech tests graduates are likely to be asked to complete by an employer. This Bank test was given to us with the following specification.
 
-### Requirements
+## User Instructions:
+
+To install, run and use this application follow these steps:
+
+1. [Fork or clone this repository](https://github.com/Alastair2D/bank_tech_test)
+2. Run: `bundle install`
+3. To use the app, open a Ruby REPL: e.g. `irb` from the command line
+4. `require './lib/client` to load the Account class and, in doing so, all dependent classes
+5. Execute Tests & View Coverage: `rspec --fd`
+6. Create a new bank account: `ac1 = Account.new`
+7. Make a deposit of e.g. £100: `ac1.deposit(100)`
+8. Make a withdrawl of e.g. £20: `ac1.withdraw(20)`
+9. Print out a statement: `ac1.statement`
+10. If you have the appetite, star the repo to be alerted to gripping upcoming developments
+
+
+### Client (Makers) Requirements
 
 * You should be able to interact with your code via a REPL like IRB or the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
 * Deposits, withdrawal.
@@ -26,11 +43,24 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
-
 ### User Stories
-* US1. As a customer, so I can store my money, I want to able to make a deposit
-* US2. As a customer, so I can access my money, I want to be able to make a withdrawl
-* US3. As a customer, so I can see the details of my account, I want to be able to print a statement
+```
+As a customer, 
+so I can store my money, 
+I want to able to make a deposit
+```
+
+```
+US2. As a customer, 
+so I can access my money, 
+I want to be able to make a withdrawl
+```
+
+```
+As a customer, 
+so I can see the details of my account, 
+I want to be able to print a statement
+```
 
 ### Features
 Must-Have Features:  Deposit, Withdraw, Print_Statement
@@ -42,5 +72,10 @@ Nice-to-Have Features: Store interactions in memory
 * UI3. Account.withdraw(date, amount) - Make a withdrawl & update balance
 * UI4. Account.statement - Prints statement
 
-### Domain Model
+### Workflow
+[Trello Board - Bank_Tech_Test_Ruby](https://trello.com/b/u1DJkPsD/bank-tech-test)
 
+### Domain Model
+[Domain Diagram - User Stories, Classes & Methods](https://www.draw.io/#G19-wYGSpyvmUiElYmEWRShAYgVDx7jjIy)
+
+[Domain Model](https://www.draw.io/#G1FblP1pOrqEgIo0Eac0GGoxNlhQz-AkvL)
