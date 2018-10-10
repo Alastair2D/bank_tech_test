@@ -21,7 +21,7 @@ describe Account do
       expect(subject.balance).to eq 1000
     end
     it 'Displays a message to user after successful deposit' do 
-      expect(subject.deposit(1000)).to eq 'Current balance: £#{balance}'
+      expect(subject.deposit(1000)).to eq 'Current balance: £1000'
     end
     it 'Adds transaction to the @transactions array' do 
       expect { subject.deposit(1000) }.to change { subject.transactions.length }.by 1

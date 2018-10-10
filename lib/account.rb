@@ -12,12 +12,14 @@ class Account
     @transactions = []
   end
 
-  def deposit(amount)
+  def deposit(type = credit, amount)
+    raise 'Invalid request' if invalid_request?(amount)
     @balance += amount 
     transaction_helper(amount)
   end
 
   def withdraw(amount)
+    raise 'Invalid request' if invalid_request?(amount)
     raise 'Insufficient funds' if insufficient_funds?(amount)
     @balance -= amount 
     transaction_helper(amount)
@@ -38,6 +40,11 @@ end
 
 def transaction_helper(amount)
   @transactions.push(@transaction_klass.new(amount: amount, balance: @balance))
-  return 'Current balance: £#{balance}'
+  return "Current balance: £#{@balance}"
 end
+
+def invalid_request?(amount)
+  amount < 0 
+end
+
 
